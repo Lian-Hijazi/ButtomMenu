@@ -24,11 +24,6 @@ public class loginFrag extends Fragment {
     private Button btn_submit;
     private FirebaseAuth mAuth;
 
-    private FrameLayout Home_frame,DashBoard_frame,Login_frame;
-    private homeFrag homeFrag;
-    private dashFrag dashFrag;
-    private loginFrag loginFrag;
-
     public loginFrag() {
         // Required empty public constructor
     }
@@ -39,10 +34,6 @@ public class loginFrag extends Fragment {
                              Bundle savedInstanceState) {
         mAuth=FirebaseAuth.getInstance();
         // Inflate the layout for this fragment
-
-        DashBoard_frame=MainActivity.DashBoard_frame;
-        Home_frame=MainActivity.Home_frame;
-        Login_frame=MainActivity.Login_frame;
 
         View view= inflater.inflate(R.layout.fragment_login, container, false);
         et_email=view.findViewById(R.id.et_email);
@@ -66,9 +57,9 @@ public class loginFrag extends Fragment {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(getActivity(), "login seccessful", Toast.LENGTH_SHORT).show();
-                        Home_frame.setVisibility(View.VISIBLE);
-                        DashBoard_frame.setVisibility(View.INVISIBLE);
-                        Login_frame.setVisibility(View.INVISIBLE);
+                        MainActivity.Home_frame.setVisibility(View.VISIBLE);
+                        MainActivity.DashBoard_frame.setVisibility(View.INVISIBLE);
+                        MainActivity.Login_frame.setVisibility(View.INVISIBLE);
                         }
 
                     else
