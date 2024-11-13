@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginFrag"
+    android:background="#FBD288">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="login fragment"
+            android:textSize="40dp"
+            android:layout_marginTop="50dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
+                android:hint="Email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/et_password"
+               android:hint="password"
+               android:inputType="textPassword"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               />
+
+       </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="115dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:textSize="20dp"
+            android:text="submit"/>
+
+
+    </LinearLayout>
+
+</FrameLayout>

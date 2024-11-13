@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="home"
+        android:icon="@drawable/ico_home"
+        android:visible="true"
+        />
+
+    <item
+        android:id="@+id/menu_dashboard"
+        android:title="DashBoard"
+        android:icon="@drawable/dashboard_icon"
+        android:visible="true"
+        />
+
+    <item
+        android:id="@+id/menu_login"
+        android:title="LogIn"
+        android:icon="@drawable/ic_login"
+        android:visible="true"
+        />
+
+</menu>
