@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".loginFrag"
-    android:background="#FBD288">
+    android:background="#FFB38E">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,6 +57,13 @@
             android:textSize="20dp"
             android:text="submit"/>
 
+        <Button
+            android:id="@+id/signButton2"
+            android:layout_marginTop="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="sign up"
+            android:textSize="20dp"/>
 
     </LinearLayout>
 

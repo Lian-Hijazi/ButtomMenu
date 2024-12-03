@@ -18,10 +18,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class loginFrag extends Fragment {
     private TextInputEditText et_email, et_password;
-    private Button btn_submit;
+    private Button btn_submit, signBtn;
     private FirebaseAuth mAuth;
 
     public loginFrag() {
@@ -36,6 +37,7 @@ public class loginFrag extends Fragment {
         // Inflate the layout for this fragment
 
         View view= inflater.inflate(R.layout.fragment_login, container, false);
+        signBtn=view.findViewById(R.id.signButton2);
         et_email=view.findViewById(R.id.et_email);
         et_password=view.findViewById(R.id.et_password);
         btn_submit=view.findViewById(R.id.submitButton);
@@ -43,6 +45,16 @@ public class loginFrag extends Fragment {
             @Override
             public void onClick(View view) {
                 checkEmailPass();
+            }
+        });
+
+        signBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.Home_frame.setVisibility(View.INVISIBLE);
+                MainActivity.DashBoard_frame.setVisibility(View.INVISIBLE);
+                MainActivity.Login_frame.setVisibility(View.INVISIBLE);
+                MainActivity.sign_frame.setVisibility(View.VISIBLE);
             }
         });
         return view;
@@ -60,6 +72,10 @@ public class loginFrag extends Fragment {
                         MainActivity.Home_frame.setVisibility(View.VISIBLE);
                         MainActivity.DashBoard_frame.setVisibility(View.INVISIBLE);
                         MainActivity.Login_frame.setVisibility(View.INVISIBLE);
+                        MainActivity.sign_frame.setVisibility(View.INVISIBLE);
+                        MainActivity.isLog=true;
+                        et_email.setText("");
+                        et_password.setText("");
                         }
 
                     else
@@ -75,4 +91,19 @@ public class loginFrag extends Fragment {
         }
 
         }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser=mAuth.getCurrentUser();
+        if(currentUser!=null)
+            updateUI();
     }
+    
+    public void updateUI(){
+        MainActivity.isLog=true;
+        MainActivity.Home_frame.setVisibility(View.VISIBLE);
+        MainActivity.DashBoard_frame.setVisibility(View.INVISIBLE);
+        MainActivity.Login_frame.setVisibility(View.INVISIBLE);
+    }
+}

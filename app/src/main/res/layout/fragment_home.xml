@@ -4,18 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".homeFrag"
-    android:background="#D4BEE4">
+    android:background="#C4E1F6">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_logout"
+        android:layout_gravity="bottom|right"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_login"
+        />
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="Home fragment"
         android:textSize="41dp"
         android:layout_marginTop="50dp"/>
+
+
+
 </LinearLayout>
 
 </FrameLayout>
